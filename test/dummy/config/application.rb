@@ -18,6 +18,8 @@ module Dummy
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+#    config.omniauth :google_oauth2,  "995954355701-1tk58btgqpq5kv5dl9e941e3r5ec7f4h.apps.googleusercontent.com", "2Jqhghvq7DHuP4Ll8y9DySLl",{ access_type: "offline", approval_prompt: "force", scope: 'https://www.googleapis.com/auth/calendar.readonly', name: 'google'}
+
   end
 end
 

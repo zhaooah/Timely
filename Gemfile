@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+gem 'google-api-client'
+gem "omniauth-google-oauth2"

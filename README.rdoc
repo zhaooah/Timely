@@ -1,3 +1,29 @@
 = Timely
 
 This project rocks and uses MIT-LICENSE.
+
+User
+	Timezone
+	Setting (A user preference from the Calendar UI, such as the user's time zone)
+	CalendarList
+		Calendar
+			Event
+				-Title
+				-Start Time
+				-End Time
+				-Description
+				-Owner
+				-Attendees
+
+
+
+
+
+Google Calendar Concepts
+
+1.Click the 'Schedule' Button
+2.See a calendar views
+
+
+Put client_secrets.json file inside same folder
+Change the application_name
