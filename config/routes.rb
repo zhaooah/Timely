@@ -14,7 +14,14 @@ Timely::Engine.routes.draw do
 		#match "/auth/google_oauth2/callback" => "google_calendar#callback"
 
  	#match '/auth/google_oauth2/callback(.:format)' => 'google_calendar#callback', :via => [:get], :as => 'google_calendar_callback'
- 	match "/auth/google_oauth2/callback" => "google_calendar#callback", :via => [:get], :as => 'google_calendar_callback'
+ #	match "/auth/google_oauth2/callback" => "google_calendar#callback", :via => [:get], :as => 'google_calendar_callback'
 #get  'auth/:provider/callback' => 'google_calendar#ccallback'
+
+#	get '/auth/google_oauth2/callback' => 'google_calendar#callback'
+
+#	get "/auth/google_oauth2/callback" => "google_calendar#callback"
+#	 get 'auth/:provider/callback' => 'google_calendar#callback'
+#get "/auth/:provider/callback" => "google_calendar#callback"
+#get '/auth/:provider/callback', to: redirect('/auth/:provider/callback')
 
 end
