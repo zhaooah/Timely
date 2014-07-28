@@ -58,5 +58,22 @@ module Timely
       def calendar_params
         params.require(:calendar).permit(:name, :owner_id, :event_id, :description)
       end
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   end
+
 end
