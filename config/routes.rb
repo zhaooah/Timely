@@ -1,5 +1,7 @@
 Timely::Engine.routes.draw do
 
+  resources :events
+
 	#Index Page for Timely
 	 root :to => "timely#index"
  

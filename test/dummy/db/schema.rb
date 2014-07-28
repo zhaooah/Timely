@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728162941) do
+ActiveRecord::Schema.define(version: 20140728201634) do
 
   create_table "enrollments", force: true do |t|
     t.integer  "course_id"
     t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timely_calendar_lists", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,6 +33,23 @@ ActiveRecord::Schema.define(version: 20140728162941) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "calendarlist_id"
   end
+
+  create_table "timely_events", force: true do |t|
+    t.string   "title"
+    t.boolean  "allDay"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "className"
+    t.boolean  "startEditable"
+    t.boolean  "durationEditable"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "calendar_id"
+  end
+
+  add_index "timely_events", ["calendar_id"], name: "index_calendar_id"
 
 end

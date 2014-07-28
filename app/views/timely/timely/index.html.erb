@@ -3,93 +3,57 @@
 <head>
 <meta charset='utf-8' />
 
-
 <%= stylesheet_link_tag "fullcalendar.css" %>
 <%= stylesheet_link_tag "fullcalendar.print.css" %>
+<%= stylesheet_link_tag "calendar_style.css" %>
 <%= javascript_include_tag "moment.min.js" %>
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery-ui.custom.min.js" %>
 <%= javascript_include_tag "fullcalendar.min.js" %>
+<%= javascript_include_tag "timely_calendar.js" %>
+
 
 <script>
+$(document).ready(function() {
 
-  $(document).ready(function() {
-    
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,basicWeek,basicDay'
-      },
-      defaultDate: '2014-06-12',
-      editable: true,
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2014-06-01'
+    // page is now ready, initialize the calendar...
+    $('.calendar').fullCalendar({
+        //header
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
         },
-        {
-          title: 'Long Event',
-          start: '2014-06-07',
-          end: '2014-06-10'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2014-06-09T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2014-06-16T16:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2014-06-12T10:30:00',
-          end: '2014-06-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2014-06-12T12:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2014-06-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2014-06-28'
-        }
-      ]
+
+        //selectable
+        selectable: true,
+        selectHelper: true,
+        
+        
+
+
+
     });
-    
-  });
 
-</script>
-<style>
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    font-size: 14px;
-  }
+    $('.calendar').fullCalendar('gotoDate', currentDate);
 
-  #calendar {
-    width: 900px;
-    margin: 40px auto;
-  }
 
-</style>
-</head>
-<body>
+    //Create new event
+    $('.calendar').click(function() {
+      alert ("hello");
+    });
 
-  <div id='calendar'></div>
 
+
+});
+</script> 
+
+
+
+
+<div class='calendar'></div>
+
+<%= Timely::ApplicationController::EVENTNAME %>
 
 <%= link_to "Import my Google Calendar", "/auth/google_oauth2" %>
-
-
-</body>
-</html>
