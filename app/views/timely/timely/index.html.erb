@@ -1,53 +1,10 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset='utf-8' />
-
-<%= stylesheet_link_tag "fullcalendar.css" %>
-<%= stylesheet_link_tag "fullcalendar.print.css" %>
-<%= stylesheet_link_tag "calendar_style.css" %>
-<%= javascript_include_tag "moment.min.js" %>
-<%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "jquery-ui.custom.min.js" %>
-<%= javascript_include_tag "fullcalendar.min.js" %>
-<%= javascript_include_tag "timely_calendar.js" %>
-
-
-<script>
-$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-    $('.calendar').fullCalendar({
-        //header
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-
-        //selectable
-        selectable: true,
-        selectHelper: true,
-        
-        
 
 
 
-    });
-
-
-    $('.calendar').fullCalendar('gotoDate', currentDate);
-
-
-    //Create new event
-    $('.calendar').click(function() {
-      alert ("hello");
-    });
-
-
-
-});
-</script> 
+<%= link_to "List events",events_list_events_path%>
+<%= link_to "Import my Google Calendar", "/auth/google_oauth2" %>
+<%= link_to "Create events", new_event_path %>
 
 
 
@@ -56,4 +13,3 @@ $(document).ready(function() {
 
 <%= Timely::ApplicationController::EVENTNAME %>
 
-<%= link_to "Import my Google Calendar", "/auth/google_oauth2" %>

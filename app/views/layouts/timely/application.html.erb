@@ -5,6 +5,77 @@
   <%= stylesheet_link_tag    "timely/application", media: "all" %>
   <%= javascript_include_tag "timely/application" %>
   <%= csrf_meta_tags %>
+  <meta charset='utf-8' />
+
+  <%= stylesheet_link_tag "fullcalendar.css" %>
+	<%= stylesheet_link_tag "fullcalendar.print.css" %>
+	<%= stylesheet_link_tag "calendar_style.css" %>
+	<%= javascript_include_tag "moment.min.js" %>
+	<%= javascript_include_tag "jquery.min.js" %>
+	<%= javascript_include_tag "jquery-ui.custom.min.js" %>
+	<%= javascript_include_tag "fullcalendar.min.js" %>
+	<%= javascript_include_tag "timely_calendar.js" %>
+
+ 
+<script>
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+    $('.calendar').fullCalendar({
+        //header
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+
+        //selectable
+        selectable: true,
+        selectHelper: true,
+        
+         eventSources: [{
+            url: '/timely/events/',
+            color: 'red',
+            textColor: 'black',
+            ignoreTimezone: false
+        }],
+
+          select: function(start, end) {
+        var title = prompt('Event Title:');
+        var eventData;
+        if (title) {
+          eventData = {
+            title: title,
+            start: start,
+            end: end
+
+          };
+        //  $('.calendar').fullCalendar('renderEvent', eventData, true); 
+        // stick? = true
+        $('.calendar').post( "/events/new", eventData);
+
+        }
+        $('.calendar').fullCalendar('unselect');
+      }
+ 
+
+    });
+
+
+    $('.calendar').fullCalendar('gotoDate', currentDate);
+
+
+    //Create new event
+    $('.calendar').click(function() {
+      alert ("hello");
+    });
+
+
+ 
+});
+</script> 
+
+	
 </head>
 <body>
 

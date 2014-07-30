@@ -5,6 +5,10 @@ Timely::Engine.routes.draw do
 	#Index Page for Timely
 	 root :to => "timely#index"
  
+	 get "/events/list_events/"  => "events#list_events"
+	 post "/auth/google_oauth2/getCalendars"  => "google_calendar#getCalendars"
+
+ 
 	#Resources
 	  resources :calendars
 

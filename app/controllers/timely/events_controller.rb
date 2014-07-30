@@ -1,12 +1,34 @@
 require_dependency "timely/application_controller"
-
 module Timely
   class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+
+    def list_events
+    @events=Event.all
+
+    end
+
+
+
     # GET /events
     def index
-      @events = Event.all
+
+  @events = Event.all  
+    #@events = @events.after(params['start']) if (params['start'])
+   # @events = @events.before(params['end']) if (params['end'])
+     events = []
+      @events.each do |event|
+        events << {:id => event.id, :title => event.title, :description => event.description || "Some cool description here...", :start => "#{event.start.iso8601}", :end => "#{event.end.iso8601}", :allDay => event.allDay ? true: false}
+      end
+
+      render :json => events.to_json
+
+
+
+
+
+
     end
 
     # GET /events/1
