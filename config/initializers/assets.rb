@@ -9,3 +9,6 @@ Rails.application.config.assets.precompile += %w(calendar_style.css)
 Rails.application.config.assets.precompile += %w(application.css)
 Rails.application.config.assets.precompile += %w(underscore.js)
 Rails.application.config.assets.precompile += %w(backbone.js)
+Rails.application.config.assets.precompile += %w(jquery-ui.custom.css)
+
+
