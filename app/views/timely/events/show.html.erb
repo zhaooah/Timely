@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @event.summary %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @event.color %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @event.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @event.end %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @event.color %>
+</p>
+
+<p>
+  <strong>Calendar:</strong>
+  <%= @event.calendar_id %>
+</p>
+
+<p>
+  <strong>All day:</strong>
+  <%= @event.all_day %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

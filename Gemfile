@@ -12,3 +12,16 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+ gem 'simple_form'
+ gem 'json'
+ gem 'awesome_print'
+
+ #jQuery and other Javascript Library
+ gem 'jquery-rails'
+ gem 'jquery-ui-rails'
+ gem 'jquery-rest-rails'
+ gem 'fullcalendar-rails'
+ gem 'jquery-minicolors-rails'
+ gem 'rails-backbone'
+ 
