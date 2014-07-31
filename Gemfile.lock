@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     timely (0.0.1)
+      fullcalendar_engine
       rails (~> 4.1.4)
 
 GEM
@@ -44,6 +45,8 @@ GEM
     erubis (2.7.0)
     execjs (2.2.1)
     fullcalendar-rails (1.6.4.0)
+    fullcalendar_engine (1.0.6)
+      rails (>= 4.0.0)
     hike (1.2.3)
     i18n (0.6.11)
     jquery-minicolors-rails (2.1.4.0)

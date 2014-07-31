@@ -25,3 +25,6 @@ gemspec
  gem 'jquery-minicolors-rails'
  gem 'rails-backbone'
  
+Gem::Specification.new do |s|
+  s.add_dependency 'fullcalendar_engines'
+end

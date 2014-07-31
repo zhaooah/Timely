@@ -1,5 +1,6 @@
 $:.push File.expand_path("../lib", __FILE__)
 
+
 # Maintain your gem's version:
 require "timely/version"
 
@@ -20,4 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1.4"
 
   s.add_development_dependency "sqlite3"
+
+  #Full calendar
+  s.add_dependency 'fullcalendar_engine'
+
 end
